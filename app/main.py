@@ -24,13 +24,7 @@ def create_app() -> FastAPI:
        Сконфигурированное приложение FastAPI
    """
     app = FastAPI(
-        title="Стартовая сборка FastAPI",
-        description=(
-            "Стартовая сборка с интегрированной SQLAlchemy 2 для разработки FastAPI приложений с продвинутой "
-            "архитектурой, включающей авторизацию, аутентификацию и управление ролями пользователей.\n\n"
-            "**Автор проекта**: Яковенко Алексей\n"
-            "**Telegram**: https://t.me/PythonPathMaster"
-        ),
+        title="ЗАО Берлин Фарма",
         version="1.0.0",
         lifespan=lifespan,
     )
@@ -65,9 +59,8 @@ def register_routers(app: FastAPI) -> None:
     @root_router.get("/", tags=["root"])
     def home_page():
         return {
-            "message": "Добро пожаловать! Проект создан для сообщества 'Легкий путь в Python'.",
-            "community": "https://t.me/PythonPathMaster",
-            "author": "Яковенко Алексей"
+            "message": "Добро пожаловать!",
+            
         }
 
     # Подключение роутеров
